@@ -13,7 +13,7 @@ import pandas as pd
 import streamlit as st
 
 # Шлях до CSV — на рівень вище від цієї папки
-DATA_PATH = Path(__file__).parent.parent / "amazon_ecommerce_1M.csv"
+DATA_PATH = Path(__file__).parent.parent / "data" / "amazon_ecommerce_1M.csv"
 
 # Тільки потрібні для каталогу колонки.
 # 1M рядків × 20 колонок → 1M рядків × 13 колонок = менше пам'яті.
