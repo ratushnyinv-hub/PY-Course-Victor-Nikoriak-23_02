@@ -90,6 +90,8 @@ ask() → gemini-2.5-flash → 503 → gemini-2.5-flash-lite → ok ✓
                                         ↑ логується як attempt #2
 ```
 
+\module_5\lesson_46_Telegram_API\ai_bot> docker compose up --build
+
 ---
 
 ## Circuit Breaker (Redis)
