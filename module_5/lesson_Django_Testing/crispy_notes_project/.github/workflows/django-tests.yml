@@ -1,4 +1,19 @@
-# GitHub Actions CI/CD — Django Tests
+# ⚠ УВАГА: ЦЕЙ ФАЙЛ НЕ ЗАПУСКАЄТЬСЯ GITHUB ACTIONS
+#
+# GitHub Actions читає workflow ТІЛЬКИ з кореневої папки репозиторію:
+#   <repo-root>/.github/workflows/*.yml
+#
+# Цей файл знаходиться в:
+#   module_5/lesson_Django_Testing/crispy_notes_project/.github/workflows/
+#   → GitHub його ігнорує.
+#
+# Робочий файл знаходиться тут:
+#   PY-Course-Victor-Nikoriak-23_02/.github/workflows/django-tests.yml
+#
+# Цей файл залишений як зразок/довідка для написання workflow.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# GitHub Actions CI/CD — Django Tests (REFERENCE / ЗРАЗОК)
 #
 # Цей файл визначає автоматичний pipeline:
 # кожен push або pull request на main/master → запускаються всі тести.

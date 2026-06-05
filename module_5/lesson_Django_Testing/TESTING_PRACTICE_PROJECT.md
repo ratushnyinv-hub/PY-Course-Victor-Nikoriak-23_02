@@ -966,19 +966,40 @@ coverage report
 
 **GitHub Actions** — вбудований CI/CD у GitHub. Безкоштовний для публічних репозиторіїв і для приватних у межах ліміту.
 
-### 19.2 Структура `.github/workflows/`
+### 19.2 Де повинен лежати файл — ВАЖЛИВО
 
-Файл потрібно розмістити у репозиторії у папці `.github/workflows/`:
+GitHub Actions читає `.yml` файли **тільки** з кореневої папки репозиторію:
+
+```
+<repo-root>/.github/workflows/*.yml   ← GitHub бачить і запускає
+```
+
+Файл в будь-якому іншому місці — **ігнорується**:
+
+```
+module_5/lesson_Django_Testing/crispy_notes_project/.github/workflows/  ← НЕ ПРАЦЮЄ
+```
+
+Правильна структура для нашого курсу (репозиторій `PY-Course-Victor-Nikoriak-23_02`):
 
 ```text
-my-project/
+PY-Course-Victor-Nikoriak-23_02/       ← корінь репозиторію
 ├── .github/
 │   └── workflows/
-│       └── django-tests.yml    ← наш CI файл
-├── manage.py
-├── requirements.txt
-└── hello_app/
-    └── tests/
+│       └── django-tests.yml           ← ТУТ, не всередині module_5/
+├── module_5/
+│   └── lesson_Django_Testing/
+│       └── crispy_notes_project/
+│           ├── manage.py
+│           └── requirements.txt
+```
+
+У workflow файлі вказуємо шлях до проєкту через `working-directory`:
+
+```yaml
+defaults:
+  run:
+    working-directory: module_5/lesson_Django_Testing/crispy_notes_project
 ```
 
 **YAML формат** — GitHub Actions використовує YAML для опису pipeline.
